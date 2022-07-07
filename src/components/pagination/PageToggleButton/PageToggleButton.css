@@ -1,0 +1,12 @@
+.page-toggle-button{
+    width: 60px;
+    height: 30px;
+    border: none;
+    background-color: #4569f3;
+    color: white;
+    cursor: pointer;
+    margin:20px 10px;
+}
+.page-toggle-button:disabled{
+    background-color: #849bf5;
+}
