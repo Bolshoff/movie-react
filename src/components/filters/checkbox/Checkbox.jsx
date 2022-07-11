@@ -1,16 +1,13 @@
-import React, { FC } from 'react';
+import React from 'react';
 import './Checkbox.css';
-import { ICheckBox } from '../../../types/types';
-import { useAppDispatch } from '../../../hooks/hooks';
 
 import { DELETE_CHECKBOX_FILTER, SET_CHECKBOX_FILTER } from '../../../store/actions/actions';
+import {useDispatch} from 'react-redux';
 
-interface CheckboxProps {
-  genre: ICheckBox;
-}
-const Checkbox: FC<CheckboxProps> = ({ genre }) => {
-  const dispatch = useAppDispatch();
-  const onChange = (e: any) => {
+
+const Checkbox = ({ genre }) => {
+  const dispatch = useDispatch();
+  const onChange = (e) => {
     const isChecked = e.target.checked;
     if (isChecked) {
       dispatch({ type: SET_CHECKBOX_FILTER, payload: e.target.value });

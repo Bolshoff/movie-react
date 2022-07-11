@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import UserData from './userData/userData';
-import { useAppDispatch } from '../../../hooks/hooks';
+import {useDispatch} from 'react-redux';
+
 
 const LoginForm = () => {
-  const [username, setUserName] = useState<any>();
-  const [password, setPassword] = useState<any>();
-  const dispatch = useAppDispatch();
+  const [username, setUserName] = useState();
+  const [password, setPassword] = useState();
+  const dispatch = useDispatch();
 
   const setLoginedToLocalstorage = () => {
     try {
@@ -14,7 +15,7 @@ const LoginForm = () => {
       alert('Превышен лимит');
     }
   };
-  const handlerSubmit = (e: any) => {
+  const handlerSubmit = (e) => {
     e.preventDefault();
     if (username === UserData.user && password === UserData.password) {
       dispatch({ type: 'login', payload: true });

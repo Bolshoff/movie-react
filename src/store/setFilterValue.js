@@ -1,14 +1,12 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+
 import { SET_SELECT_VALUE } from './actions/actions';
 
-interface IsetFilterValue{
-    selectValue: string
-}
-const defaultState: IsetFilterValue = {
+
+const defaultState = {
   selectValue: 'Популярные по убыванию',
 };
 
-const setFilterValue = (state = defaultState, action: PayloadAction<string>) => {
+const setFilterValue = (state = defaultState, action) => {
   switch (action.type) {
     case SET_SELECT_VALUE:
       return {

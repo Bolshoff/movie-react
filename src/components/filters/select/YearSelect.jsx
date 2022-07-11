@@ -1,10 +1,11 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
+
 import { SET_YEAR_FILTER_VALUE } from '../../../store/actions/actions';
+import {useDispatch, useSelector} from 'react-redux';
 
 const YearSelect = () => {
-  const yearSelectValue = useAppSelector((state) => state.setYearFilterValue.yearFilterValue);
-  const dispatch = useAppDispatch();
+  const yearSelectValue = useSelector((state) => state.setYearFilterValue.yearFilterValue);
+  const dispatch = useDispatch();
   const sortOptions = [
     { key: 2020 },
     { key: 2019 },
@@ -12,7 +13,7 @@ const YearSelect = () => {
     { key: 2017 },
   ];
 
-  const changeYearFilterValue = (e: any) => {
+  const changeYearFilterValue = (e) => {
     dispatch({ type: SET_YEAR_FILTER_VALUE, payload: e.target.value });
   };
 

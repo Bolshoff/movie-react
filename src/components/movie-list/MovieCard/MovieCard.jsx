@@ -1,19 +1,22 @@
-import React, { FC } from 'react';
+import React from 'react';
 import './MovieCard.css';
 import { Link } from 'react-router-dom';
-import { IMovies } from '../../../types/types';
+import {useDispatch} from 'react-redux';
+import {setCurrentMovie} from '../../../store/actions/actions';
 
-interface MovieCardProps{
-    movie: IMovies,
-    }
-
-const MovieCard:FC<MovieCardProps> = ({ movie }) => {
-  const clickOnFavorite = (e:any) => {
+const MovieCard = ({ movie }) => {
+  const dispatch = useDispatch();
+  const clickOnFavorite = (e) => {
     e.currentTarget.classList.toggle('favorite');
   };
-  const clickOnBookmark = (e:any) => {
+  const clickOnBookmark = (e) => {
     e.currentTarget.classList.toggle('marked');
   };
+
+  const clickOnMoreLink = () => {
+    dispatch(setCurrentMovie(movie))
+
+  }
 
   return (
     <div className="movie-card" key={movie.id}>
@@ -51,8 +54,8 @@ const MovieCard:FC<MovieCardProps> = ({ movie }) => {
           />
         </div>
         <div className="movie-title">{movie.title}</div>
-        <div className="detailed">
-          <Link to={`/testPage${movie.title}`}>Подробнее</Link>
+        <div className="detailed" onClick={clickOnMoreLink}>
+          <Link to={`/${movie.title}`}>Подробнее</Link>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import ButtonReset from './ButtonReset/ButtonReset';
 import SortSelect from './select/SortSelect';
 import YearSelect from './select/YearSelect';
 import CheckboxBlock from './checkbox/CheckboxBlock';
-import Pagination from '../Pagination/Pagination';
+import Pagination from '../pagination/Pagination';
 import { genres } from '../../genreList';
 
 const Filters = () => (

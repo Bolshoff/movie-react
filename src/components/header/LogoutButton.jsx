@@ -1,9 +1,10 @@
 import React from 'react';
 import './LoginButton.css';
-import { useAppDispatch } from '../../hooks/hooks';
+import {useDispatch} from 'react-redux';
+
 
 function LogoutButton() {
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const handlerOnCLick = () => {
     dispatch({ type: 'logout', payload: false });
     localStorage.removeItem('isLogined');

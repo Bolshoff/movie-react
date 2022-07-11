@@ -1,15 +1,13 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+
 import { SET_SORTED_CARDS } from './actions/actions';
 import movieData from '../movieData';
 
-interface IsetSortedCards {
- sortedCards: any
-}
-const defaultState: IsetSortedCards = {
+
+const defaultState = {
   sortedCards: movieData,
 };
 
-const setSortedCards = (state = defaultState, action: PayloadAction<any>) => {
+const setSortedCards = (state = defaultState, action) => {
   switch (action.type) {
     case SET_SORTED_CARDS:
       return {

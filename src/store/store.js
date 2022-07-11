@@ -7,6 +7,8 @@ import setYearFilterValue from './setYearFilterValue';
 import setCheckboxFilter from './setCheckboxFilter';
 import showAuthorizationModal from './showAuthorizationModal';
 import setLoginedUser from './setLoginedUser';
+import setCurrentMovie from './setCurrentMovie';
+import searchMovies from './setSearchParametrs';
 
 const rootReducer = combineReducers({
   changeCurrentPage,
@@ -17,11 +19,10 @@ const rootReducer = combineReducers({
   setCheckboxFilter,
   showAuthorizationModal,
   setLoginedUser,
+  setCurrentMovie,
+  searchMovies
 });
 const store = createStore(rootReducer);
 
-export type RootState = ReturnType<typeof store.getState>
-
-export type AppDispatch = typeof store.dispatch
 
 export default store;

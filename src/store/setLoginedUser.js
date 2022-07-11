@@ -1,13 +1,9 @@
-import { PayloadAction } from '@reduxjs/toolkit';
 
-interface ILoginedUser {
-    loginedUser: boolean
-}
-const defaultState: ILoginedUser = {
+const defaultState = {
   loginedUser: false,
 };
 
-const setLoginedUser = (state = defaultState, action: PayloadAction<boolean>) => {
+const setLoginedUser = (state = defaultState, action) => {
   switch (action.type) {
     case 'login':
       return {

@@ -1,13 +1,9 @@
-import { PayloadAction } from '@reduxjs/toolkit';
 
-interface IshowAuthorizationModal {
-    authorizModal: boolean
-}
-const defaultState: IshowAuthorizationModal = {
+const defaultState = {
   authorizModal: false,
 };
 
-const showAuthorizationModal = (state = defaultState, action: PayloadAction<number>) => {
+const showAuthorizationModal = (state = defaultState, action) => {
   switch (action.type) {
     case 'showAuthorizationModal':
       return {

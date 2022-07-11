@@ -1,14 +1,12 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+
 import { DELETE_CHECKBOX_FILTER, SET_CHECKBOX_FILTER } from './actions/actions';
 
-interface IsetCheckboxFilter{
-    checkboxFilter: any
-}
-const defaultState: IsetCheckboxFilter = {
+
+const defaultState = {
   checkboxFilter: [],
 };
 
-const setCheckboxFilter = (state = defaultState, action: PayloadAction<any>) => {
+const setCheckboxFilter = (state = defaultState, action) => {
   // const { index } = action.payload;
   switch (action.type) {
     case SET_CHECKBOX_FILTER:
@@ -24,7 +22,7 @@ const setCheckboxFilter = (state = defaultState, action: PayloadAction<any>) => 
       //     ...state.checkboxFilter.slice(index + 1)],
 
         checkboxFilter: state.checkboxFilter.filter(
-          (checkbox: any) => checkbox.value !== action.payload.value,
+          (checkbox) => checkbox.value !== action.payload.value,
         ),
       };
       //   checkboxFilter: state.checkboxFilter

@@ -1,13 +1,8 @@
 import React from 'react';
 import './PageToggleButton.css';
 
-interface PageToggleButtonProps{
-  title: string,
-  changePage: ()=> void,
-  disabled: boolean
-  }
 
-function PageToggleButton({ title, changePage, disabled }: PageToggleButtonProps) {
+function PageToggleButton({ title, changePage, disabled }) {
   return (
 
     <button className="page-toggle-button" type="button" onClick={changePage} disabled={disabled}>{title}</button>

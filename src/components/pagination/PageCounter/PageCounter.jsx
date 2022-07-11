@@ -1,11 +1,12 @@
 import React from 'react';
 import './PageCounter.css';
-import { useAppSelector } from '../../../hooks/hooks';
+
 import movieData from '../../../movieData';
+import {useSelector} from 'react-redux';
 
 function PageCounter() {
-  const currentPage = useAppSelector((state) => state.changeCurrentPage.currentPage);
-  const cardsPerPage = useAppSelector((state) => state.setCardsPerPage.cardsPerPage);
+  const currentPage = useSelector((state) => state.changeCurrentPage.currentPage);
+  const cardsPerPage = useSelector((state) => state.setCardsPerPage.cardsPerPage);
   const countPages = Math.ceil(movieData.length / cardsPerPage);
   return (
 

@@ -1,17 +1,17 @@
-import React, { FC } from 'react';
+import React from 'react';
 import './AuthorizationModal.css';
-import { useAppDispatch } from '../../hooks/hooks';
+
 import LoginForm from './LoginForm/LoginForm';
+import {useDispatch} from 'react-redux';
 
-interface AuthorizationModalProps{
- show: boolean
-}
 
-const AuthorizationModal: FC<AuthorizationModalProps> = ({ show }) => {
+
+const AuthorizationModal = ({show}) => {
+  
   if (!show) {
     return null;
   }
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const handlerOnCLick = () => {
     dispatch({ type: 'hideAuthorizationModal', payload: false });
   };

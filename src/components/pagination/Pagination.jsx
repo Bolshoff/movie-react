@@ -3,18 +3,19 @@ import './Pagination.css';
 
 import PageToggleButton from './PageToggleButton/PageToggleButton';
 import PageCounter from './PageCounter/PageCounter';
-import { useAppSelector, useAppDispatch } from '../../hooks/hooks';
+
 import { DECREMENT_CURRENT_PAGE, INCREMENT_CURRENT_PAGE } from '../../store/actions/actions';
 import movieData from '../../movieData';
+import {useDispatch, useSelector} from 'react-redux';
 
 const Pagination = () => {
-  const currentPage = useAppSelector((state) => state.changeCurrentPage.currentPage);
-  const cardsPerPage = useAppSelector((state) => state.setCardsPerPage.cardsPerPage);
+  const currentPage = useSelector((state) => state.changeCurrentPage.currentPage);
+  const cardsPerPage = useSelector((state) => state.setCardsPerPage.cardsPerPage);
   const countPages = movieData.length / cardsPerPage;
   const isNextButtonDisable = currentPage === countPages;
   const isPrevButtonDisable = currentPage === 1;
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const nextPage = () => {
     dispatch({ type: INCREMENT_CURRENT_PAGE, payload: currentPage });
   };

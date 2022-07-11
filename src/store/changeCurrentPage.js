@@ -1,14 +1,12 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+
 import { INCREMENT_CURRENT_PAGE, DECREMENT_CURRENT_PAGE } from './actions/actions';
 
-interface IChangePage {
-  currentPage: number
-}
-const defaultState: IChangePage = {
+
+const defaultState = {
   currentPage: 1,
 };
 
-const changeCurrentPage = (state = defaultState, action: PayloadAction<number>) => {
+const changeCurrentPage = (state = defaultState, action) => {
   switch (action.type) {
     case INCREMENT_CURRENT_PAGE:
       return {
